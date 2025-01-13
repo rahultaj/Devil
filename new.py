@@ -56,11 +56,11 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await update.message.reply_text("❌ Invalid port number.")
         return
 
-    if not duration.isdigit() or int(duration) <= 0:
+    if not duration.isdigit() or int(duration) <= 1000:
         await update.message.reply_text("❌ Invalid duration.")
         return
 
-    executable = "./bgmi"
+    executable = "./sharp"
     if not os.path.isfile(executable):
         await update.message.reply_text(
             "❌ `flood_tool` binary not found. Compile it and place it in the bot's directory.",
