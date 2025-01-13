@@ -56,7 +56,7 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await update.message.reply_text("❌ Invalid port number.")
         return
 
-    if not duration.isdigit() or int(duration) <= 1000:
+    if not duration.isdigit() or int(duration) <= 0:
         await update.message.reply_text("❌ Invalid duration.")
         return
 
